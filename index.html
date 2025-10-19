@@ -1,0 +1,1222 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+	
+		<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<script data-cfasync="false" data-pagespeed-no-defer>
+	var gtm4wp_datalayer_name = "dataLayer";
+	var dataLayer = dataLayer || [];
+</script>
+<!-- End Google Tag Manager for WordPress by gtm4wp.com -->
+	<!-- This site is optimized with the Yoast SEO Premium plugin v23.4 (Yoast SEO v23.4) - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Descãoplica Pocket - Camilli Chamone</title>
+	<link rel="canonical" href="https://camillichamone.com.br/descaoplica/" />
+	<meta property="og:locale" content="pt_BR" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Descãoplica Pocket" />
+	<meta property="og:description" content="Aprenda a ter um cãozinho educado, equilibrado e feliz, sem precisar sair de casa! https://youtu.be/q45hFzEKZ74 QUERO GARANTIR MINHA VAGA Metodologia 100% embasada em ciência Acesso ao curso por 1 ano Emissão de certificado Conteúdos didáticos e objetivos Acesso à aulas 100% gravadas O CONTEÚDO! O que você vai aprender nesse curso? Para quem é esse [&hellip;]" />
+	<meta property="og:url" content="https://camillichamone.com.br/descaoplica/" />
+	<meta property="og:site_name" content="Camilli Chamone" />
+	<meta property="article:modified_time" content="2025-10-17T20:12:57+00:00" />
+	<meta property="og:image" content="https://camillichamone.com.br/wp-content/uploads/2024/02/1.png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Est. tempo de leitura" />
+	<meta name="twitter:data1" content="13 minutos" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://camillichamone.com.br/descaoplica/","url":"https://camillichamone.com.br/descaoplica/","name":"Descãoplica Pocket - Camilli Chamone","isPartOf":{"@id":"https://camillichamone.com.br/#website"},"primaryImageOfPage":{"@id":"https://camillichamone.com.br/descaoplica/#primaryimage"},"image":{"@id":"https://camillichamone.com.br/descaoplica/#primaryimage"},"thumbnailUrl":"https://camillichamone.com.br/wp-content/uploads/2024/02/1.png","datePublished":"2023-01-05T17:25:21+00:00","dateModified":"2025-10-17T20:12:57+00:00","breadcrumb":{"@id":"https://camillichamone.com.br/descaoplica/#breadcrumb"},"inLanguage":"pt-BR","potentialAction":[{"@type":"ReadAction","target":["https://camillichamone.com.br/descaoplica/"]}]},{"@type":"ImageObject","inLanguage":"pt-BR","@id":"https://camillichamone.com.br/descaoplica/#primaryimage","url":"https://camillichamone.com.br/wp-content/uploads/2024/02/1.png","contentUrl":"https://camillichamone.com.br/wp-content/uploads/2024/02/1.png","width":1080,"height":1350},{"@type":"BreadcrumbList","@id":"https://camillichamone.com.br/descaoplica/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://camillichamone.com.br/"},{"@type":"ListItem","position":2,"name":"Descãoplica Pocket"}]},{"@type":"WebSite","@id":"https://camillichamone.com.br/#website","url":"https://camillichamone.com.br/","name":"Camilli Chamone","description":"Ajudo você a tratar a ansiedade do seu cão.","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://camillichamone.com.br/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"pt-BR"}]}</script>
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+
+<link rel="alternate" type="application/rss+xml" title="Feed para Camilli Chamone &raquo;" href="https://camillichamone.com.br/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Feed de comentários para Camilli Chamone &raquo;" href="https://camillichamone.com.br/comments/feed/" />
+<style id='wp-emoji-styles-inline-css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<style id='joinchat-button-style-inline-css'>
+.wp-block-joinchat-button{border:none!important;text-align:center}.wp-block-joinchat-button figure{display:table;margin:0 auto;padding:0}.wp-block-joinchat-button figcaption{font:normal normal 400 .6em/2em var(--wp--preset--font-family--system-font,sans-serif);margin:0;padding:0}.wp-block-joinchat-button .joinchat-button__qr{background-color:#fff;border:6px solid #25d366;border-radius:30px;box-sizing:content-box;display:block;height:200px;margin:auto;overflow:hidden;padding:10px;width:200px}.wp-block-joinchat-button .joinchat-button__qr canvas,.wp-block-joinchat-button .joinchat-button__qr img{display:block;margin:auto}.wp-block-joinchat-button .joinchat-button__link{align-items:center;background-color:#25d366;border:6px solid #25d366;border-radius:30px;display:inline-flex;flex-flow:row nowrap;justify-content:center;line-height:1.25em;margin:0 auto;text-decoration:none}.wp-block-joinchat-button .joinchat-button__link:before{background:transparent var(--joinchat-ico) no-repeat center;background-size:100%;content:"";display:block;height:1.5em;margin:-.75em .75em -.75em 0;width:1.5em}.wp-block-joinchat-button figure+.joinchat-button__link{margin-top:10px}@media (orientation:landscape)and (min-height:481px),(orientation:portrait)and (min-width:481px){.wp-block-joinchat-button.joinchat-button--qr-only figure+.joinchat-button__link{display:none}}@media (max-width:480px),(orientation:landscape)and (max-height:480px){.wp-block-joinchat-button figure{display:none}}
+
+</style>
+<style id='global-styles-inline-css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:root { --wp--style--global--content-size: 800px;--wp--style--global--wide-size: 1200px; }:where(body) { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.wp-site-blocks) > * { margin-block-start: 24px; margin-block-end: 0; }:where(.wp-site-blocks) > :first-child { margin-block-start: 0; }:where(.wp-site-blocks) > :last-child { margin-block-end: 0; }:root { --wp--style--block-gap: 24px; }:root :where(.is-layout-flow) > :first-child{margin-block-start: 0;}:root :where(.is-layout-flow) > :last-child{margin-block-end: 0;}:root :where(.is-layout-flow) > *{margin-block-start: 24px;margin-block-end: 0;}:root :where(.is-layout-constrained) > :first-child{margin-block-start: 0;}:root :where(.is-layout-constrained) > :last-child{margin-block-end: 0;}:root :where(.is-layout-constrained) > *{margin-block-start: 24px;margin-block-end: 0;}:root :where(.is-layout-flex){gap: 24px;}:root :where(.is-layout-grid){gap: 24px;}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}a:where(:not(.wp-element-button)){text-decoration: underline;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;line-height: inherit;padding: calc(0.667em + 2px) calc(1.333em + 2px);text-decoration: none;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link data-minify="1" rel='stylesheet' id='cookie-law-info-css' href='https://camillichamone.com.br/wp-content/cache/min/1/wp-content/plugins/cookie-law-info/legacy/public/css/cookie-law-info-public.css?ver=1760443175' media='all' />
+<link data-minify="1" rel='stylesheet' id='cookie-law-info-gdpr-css' href='https://camillichamone.com.br/wp-content/cache/min/1/wp-content/plugins/cookie-law-info/legacy/public/css/cookie-law-info-gdpr.css?ver=1760443175' media='all' />
+<link data-minify="1" rel='stylesheet' id='hello-elementor-css' href='https://camillichamone.com.br/wp-content/cache/min/1/wp-content/themes/hello-elementor/assets/css/reset.css?ver=1760443175' media='all' />
+<link data-minify="1" rel='stylesheet' id='hello-elementor-theme-style-css' href='https://camillichamone.com.br/wp-content/cache/min/1/wp-content/themes/hello-elementor/assets/css/theme.css?ver=1760443175' media='all' />
+<link data-minify="1" rel='stylesheet' id='hello-elementor-header-footer-css' href='https://camillichamone.com.br/wp-content/cache/min/1/wp-content/themes/hello-elementor/assets/css/header-footer.css?ver=1760443175' media='all' />
+<link rel='stylesheet' id='elementor-frontend-css' href='https://camillichamone.com.br/wp-content/uploads/elementor/css/custom-frontend.min.css?ver=1760443170' media='all' />
+<link rel='stylesheet' id='widget-heading-css' href='https://camillichamone.com.br/wp-content/plugins/elementor/assets/css/widget-heading.min.css?ver=3.32.4' media='all' />
+<link rel='stylesheet' id='e-animation-slideInUp-css' href='https://camillichamone.com.br/wp-content/plugins/elementor/assets/lib/animations/styles/slideInUp.min.css?ver=3.32.4' media='all' />
+<link rel='stylesheet' id='e-popup-css' href='https://camillichamone.com.br/wp-content/plugins/elementor-pro/assets/css/conditionals/popup.min.css?ver=3.30.0' media='all' />
+<link data-minify="1" rel='stylesheet' id='elementor-icons-css' href='https://camillichamone.com.br/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=1760443175' media='all' />
+<link rel='stylesheet' id='elementor-post-37-css' href='https://camillichamone.com.br/wp-content/uploads/elementor/css/post-37.css?ver=1760443170' media='all' />
+<link rel='stylesheet' id='widget-video-css' href='https://camillichamone.com.br/wp-content/plugins/elementor/assets/css/widget-video.min.css?ver=3.32.4' media='all' />
+<link rel='stylesheet' id='widget-icon-box-css' href='https://camillichamone.com.br/wp-content/uploads/elementor/css/custom-widget-icon-box.min.css?ver=1760443170' media='all' />
+<link data-minify="1" rel='stylesheet' id='swiper-css' href='https://camillichamone.com.br/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/swiper/v8/css/swiper.min.css?ver=1760448754' media='all' />
+<link rel='stylesheet' id='e-swiper-css' href='https://camillichamone.com.br/wp-content/plugins/elementor/assets/css/conditionals/e-swiper.min.css?ver=3.32.4' media='all' />
+<link rel='stylesheet' id='widget-image-carousel-css' href='https://camillichamone.com.br/wp-content/plugins/elementor/assets/css/widget-image-carousel.min.css?ver=3.32.4' media='all' />
+<link rel='stylesheet' id='widget-image-css' href='https://camillichamone.com.br/wp-content/plugins/elementor/assets/css/widget-image.min.css?ver=3.32.4' media='all' />
+<link rel='stylesheet' id='widget-image-box-css' href='https://camillichamone.com.br/wp-content/uploads/elementor/css/custom-widget-image-box.min.css?ver=1760443170' media='all' />
+<link rel='stylesheet' id='widget-animated-headline-css' href='https://camillichamone.com.br/wp-content/plugins/elementor-pro/assets/css/widget-animated-headline.min.css?ver=3.30.0' media='all' />
+<link rel='stylesheet' id='widget-toggle-css' href='https://camillichamone.com.br/wp-content/uploads/elementor/css/custom-widget-toggle.min.css?ver=1760443170' media='all' />
+<link rel='stylesheet' id='widget-social-icons-css' href='https://camillichamone.com.br/wp-content/plugins/elementor/assets/css/widget-social-icons.min.css?ver=3.32.4' media='all' />
+<link rel='stylesheet' id='e-apple-webkit-css' href='https://camillichamone.com.br/wp-content/uploads/elementor/css/custom-apple-webkit.min.css?ver=1760443170' media='all' />
+<link rel='stylesheet' id='elementor-post-3903-css' href='https://camillichamone.com.br/wp-content/uploads/elementor/css/post-3903.css?ver=1760732002' media='all' />
+<link rel='stylesheet' id='elementor-post-2702-css' href='https://camillichamone.com.br/wp-content/uploads/elementor/css/post-2702.css?ver=1760443170' media='all' />
+<link data-minify="1" rel='stylesheet' id='fluentform-elementor-widget-css' href='https://camillichamone.com.br/wp-content/cache/min/1/wp-content/plugins/fluentform/assets/css/fluent-forms-elementor-widget.css?ver=1760443175' media='all' />
+<link data-minify="1" rel='stylesheet' id='skb-cife-elegant_icon-css' href='https://camillichamone.com.br/wp-content/cache/min/1/wp-content/plugins/skyboot-custom-icons-for-elementor/assets/css/elegant.css?ver=1760443175' media='all' />
+<link data-minify="1" rel='stylesheet' id='skb-cife-linearicons_icon-css' href='https://camillichamone.com.br/wp-content/cache/min/1/wp-content/plugins/skyboot-custom-icons-for-elementor/assets/css/linearicons.css?ver=1760443175' media='all' />
+<link data-minify="1" rel='stylesheet' id='skb-cife-themify_icon-css' href='https://camillichamone.com.br/wp-content/cache/min/1/wp-content/plugins/skyboot-custom-icons-for-elementor/assets/css/themify.css?ver=1760443175' media='all' />
+<link data-minify="1" rel='stylesheet' id='elementor-gf-local-roboto-css' href='https://camillichamone.com.br/wp-content/cache/min/1/wp-content/uploads/elementor/google-fonts/css/roboto.css?ver=1760443176' media='all' />
+<link data-minify="1" rel='stylesheet' id='elementor-gf-local-robotoslab-css' href='https://camillichamone.com.br/wp-content/cache/min/1/wp-content/uploads/elementor/google-fonts/css/robotoslab.css?ver=1760443176' media='all' />
+<link data-minify="1" rel='stylesheet' id='elementor-gf-local-asapcondensed-css' href='https://camillichamone.com.br/wp-content/cache/min/1/wp-content/uploads/elementor/google-fonts/css/asapcondensed.css?ver=1760451425' media='all' />
+<link data-minify="1" rel='stylesheet' id='elementor-gf-local-baloo2-css' href='https://camillichamone.com.br/wp-content/cache/min/1/wp-content/uploads/elementor/google-fonts/css/baloo2.css?ver=1760451425' media='all' />
+<link data-minify="1" rel='stylesheet' id='elementor-gf-local-fredokaone-css' href='https://camillichamone.com.br/wp-content/cache/min/1/wp-content/uploads/elementor/google-fonts/css/fredokaone.css?ver=1760451425' media='all' />
+<link data-minify="1" rel='stylesheet' id='elementor-gf-local-inter-css' href='https://camillichamone.com.br/wp-content/cache/min/1/wp-content/uploads/elementor/google-fonts/css/inter.css?ver=1760443399' media='all' />
+<link rel='stylesheet' id='elementor-icons-shared-0-css' href='https://camillichamone.com.br/wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.min.css?ver=5.15.3' media='all' />
+<link data-minify="1" rel='stylesheet' id='elementor-icons-fa-solid-css' href='https://camillichamone.com.br/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/font-awesome/css/solid.min.css?ver=1760443399' media='all' />
+<link data-minify="1" rel='stylesheet' id='elementor-icons-fa-regular-css' href='https://camillichamone.com.br/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/font-awesome/css/regular.min.css?ver=1760448754' media='all' />
+<link data-minify="1" rel='stylesheet' id='elementor-icons-fa-brands-css' href='https://camillichamone.com.br/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/font-awesome/css/brands.min.css?ver=1760443399' media='all' />
+<script type="rocketlazyloadscript" src="https://camillichamone.com.br/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="rocketlazyloadscript" src="https://camillichamone.com.br/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<script id="cookie-law-info-js-extra">
+var Cli_Data = {"nn_cookie_ids":[],"cookielist":[],"non_necessary_cookies":[],"ccpaEnabled":"","ccpaRegionBased":"","ccpaBarEnabled":"","strictlyEnabled":["necessary","obligatoire"],"ccpaType":"gdpr","js_blocking":"1","custom_integration":"","triggerDomRefresh":"","secure_cookies":""};
+var cli_cookiebar_settings = {"animate_speed_hide":"500","animate_speed_show":"500","background":"#ffffff","border":"#b1a6a6c2","border_on":"","button_1_button_colour":"#47e200","button_1_button_hover":"#39b500","button_1_link_colour":"#fff","button_1_as_button":"1","button_1_new_win":"","button_2_button_colour":"#333","button_2_button_hover":"#292929","button_2_link_colour":"#444","button_2_as_button":"","button_2_hidebar":"","button_3_button_colour":"#3566bb","button_3_button_hover":"#2a5296","button_3_link_colour":"#fff","button_3_as_button":"1","button_3_new_win":"","button_4_button_colour":"#000","button_4_button_hover":"#000000","button_4_link_colour":"#333333","button_4_as_button":"","button_7_button_colour":"#61a229","button_7_button_hover":"#4e8221","button_7_link_colour":"#fff","button_7_as_button":"1","button_7_new_win":"","font_family":"inherit","header_fix":"","notify_animate_hide":"1","notify_animate_show":"","notify_div_id":"#cookie-law-info-bar","notify_position_horizontal":"right","notify_position_vertical":"bottom","scroll_close":"","scroll_close_reload":"","accept_close_reload":"","reject_close_reload":"","showagain_tab":"","showagain_background":"#fff","showagain_border":"#000","showagain_div_id":"#cookie-law-info-again","showagain_x_position":"100px","text":"#8c8c8c","show_once_yn":"","show_once":"10000","logging_on":"","as_popup":"","popup_overlay":"1","bar_heading_text":"","cookie_bar_as":"banner","popup_showagain_position":"bottom-right","widget_position":"left"};
+var log_object = {"ajax_url":"https:\/\/camillichamone.com.br\/wp-admin\/admin-ajax.php"};
+</script>
+<script type="rocketlazyloadscript" src="https://camillichamone.com.br/wp-content/plugins/cookie-law-info/legacy/public/js/cookie-law-info-public.js?ver=3.3.5" id="cookie-law-info-js"></script>
+<link rel="https://api.w.org/" href="https://camillichamone.com.br/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://camillichamone.com.br/wp-json/wp/v2/pages/3903" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://camillichamone.com.br/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.8.3" />
+<link rel='shortlink' href='https://camillichamone.com.br/?p=3903' />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://camillichamone.com.br/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcamillichamone.com.br%2Fdescaoplica%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://camillichamone.com.br/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcamillichamone.com.br%2Fdescaoplica%2F&#038;format=xml" />
+<meta name="cdp-version" content="1.5.0" />		<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+				(function(c,l,a,r,i,t,y){
+					c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;
+					t.src="https://www.clarity.ms/tag/"+i+"?ref=wordpress";y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+				})(window, document, "clarity", "script", "iku2ltkr94");
+		</script>
+		
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<!-- GTM Container placement set to footer -->
+<script data-cfasync="false" data-pagespeed-no-defer>
+	var dataLayer_content = {"pagePostType":"page","pagePostType2":"single-page","pagePostAuthor":"admin"};
+	dataLayer.push( dataLayer_content );
+</script>
+<script type="rocketlazyloadscript" data-cfasync="false" data-pagespeed-no-defer>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5D5H57F');
+</script>
+<!-- End Google Tag Manager for WordPress by gtm4wp.com --><meta name="generator" content="Elementor 3.32.4; features: additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-auto">
+			<style>
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * {
+					background-image: none !important;
+				}
+				@media screen and (max-height: 1024px) {
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+				@media screen and (max-height: 640px) {
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+			</style>
+			<link rel="icon" href="https://camillichamone.com.br/wp-content/uploads/2022/11/cropped-Favicon-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://camillichamone.com.br/wp-content/uploads/2022/11/cropped-Favicon-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://camillichamone.com.br/wp-content/uploads/2022/11/cropped-Favicon-180x180.png" />
+<meta name="msapplication-TileImage" content="https://camillichamone.com.br/wp-content/uploads/2022/11/cropped-Favicon-270x270.png" />
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" /></head>
+<body class="wp-singular page-template page-template-elementor_canvas page page-id-3903 wp-embed-responsive wp-theme-hello-elementor hello-elementor-default elementor-default elementor-template-canvas elementor-kit-37 elementor-page elementor-page-3903">
+			<div data-elementor-type="wp-page" data-elementor-id="3903" class="elementor elementor-3903" data-elementor-post-type="page">
+						<section class="elementor-section elementor-top-section elementor-element elementor-element-88e7a81 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="88e7a81" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-ce882a2" data-id="ce882a2" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<section class="elementor-section elementor-inner-section elementor-element elementor-element-12d1b0a elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="12d1b0a" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-d9e5780" data-id="d9e5780" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-94d71cb elementor-widget elementor-widget-text-editor" data-id="94d71cb" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p class="p1">Aprenda a ter um <strong>cãozinho educado, equilibrado e feliz</strong>, sem precisar sair de casa!</p>								</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<div class="elementor-element elementor-element-1d385ea elementor-widget elementor-widget-video" data-id="1d385ea" data-element_type="widget" data-settings="{&quot;youtube_url&quot;:&quot;https:\/\/youtu.be\/q45hFzEKZ74&quot;,&quot;video_type&quot;:&quot;youtube&quot;,&quot;controls&quot;:&quot;yes&quot;}" data-widget_type="video.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-wrapper elementor-open-inline">
+			<div class="elementor-video"></div>		</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-7b0f9be elementor-align-justify elementor-widget elementor-widget-button" data-id="7b0f9be" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+									<div class="elementor-button-wrapper">
+					<a class="elementor-button elementor-button-link elementor-size-md" href="https://pagamento.comprasegura.uno/checkout/pro-d75b13f8-4f46-47db-aa0e-471db82c2432" target="_blank">
+						<span class="elementor-button-content-wrapper">
+									<span class="elementor-button-text">QUERO GARANTIR MINHA VAGA</span>
+					</span>
+					</a>
+				</div>
+								</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-a8b29dc elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="a8b29dc" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-20 elementor-top-column elementor-element elementor-element-637d57f" data-id="637d57f" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-5f08532 elementor-view-default elementor-position-top elementor-mobile-position-top elementor-widget elementor-widget-icon-box" data-id="5f08532" data-element_type="widget" data-widget_type="icon-box.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-icon-box-wrapper">
+
+						<div class="elementor-icon-box-icon">
+				<span  class="elementor-icon">
+				<i aria-hidden="true" class="fas fa-dna"></i>				</span>
+			</div>
+			
+						<div class="elementor-icon-box-content">
+
+				
+									<p class="elementor-icon-box-description">
+						Metodologia 100% embasada em ciência					</p>
+				
+			</div>
+			
+		</div>
+						</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-20 elementor-top-column elementor-element elementor-element-41340d0" data-id="41340d0" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-a1102d7 elementor-view-default elementor-position-top elementor-mobile-position-top elementor-widget elementor-widget-icon-box" data-id="a1102d7" data-element_type="widget" data-widget_type="icon-box.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-icon-box-wrapper">
+
+						<div class="elementor-icon-box-icon">
+				<span  class="elementor-icon">
+				<i aria-hidden="true" class="fas fa-lock-open"></i>				</span>
+			</div>
+			
+						<div class="elementor-icon-box-content">
+
+				
+									<p class="elementor-icon-box-description">
+						Acesso ao curso por 1 ano					</p>
+				
+			</div>
+			
+		</div>
+						</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-20 elementor-top-column elementor-element elementor-element-1867c24" data-id="1867c24" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-2c9bdad elementor-view-default elementor-position-top elementor-mobile-position-top elementor-widget elementor-widget-icon-box" data-id="2c9bdad" data-element_type="widget" data-widget_type="icon-box.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-icon-box-wrapper">
+
+						<div class="elementor-icon-box-icon">
+				<span  class="elementor-icon">
+				<i aria-hidden="true" class="fas fa-graduation-cap"></i>				</span>
+			</div>
+			
+						<div class="elementor-icon-box-content">
+
+				
+									<p class="elementor-icon-box-description">
+						Emissão de certificado					</p>
+				
+			</div>
+			
+		</div>
+						</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-20 elementor-top-column elementor-element elementor-element-eb42f3b" data-id="eb42f3b" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-d64e622 elementor-view-default elementor-position-top elementor-mobile-position-top elementor-widget elementor-widget-icon-box" data-id="d64e622" data-element_type="widget" data-widget_type="icon-box.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-icon-box-wrapper">
+
+						<div class="elementor-icon-box-icon">
+				<span  class="elementor-icon">
+				<i aria-hidden="true" class="far fa-calendar-check"></i>				</span>
+			</div>
+			
+						<div class="elementor-icon-box-content">
+
+				
+									<p class="elementor-icon-box-description">
+						Conteúdos didáticos e objetivos					</p>
+				
+			</div>
+			
+		</div>
+						</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-20 elementor-top-column elementor-element elementor-element-9c26d14" data-id="9c26d14" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-5853262 elementor-view-default elementor-position-top elementor-mobile-position-top elementor-widget elementor-widget-icon-box" data-id="5853262" data-element_type="widget" data-widget_type="icon-box.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-icon-box-wrapper">
+
+						<div class="elementor-icon-box-icon">
+				<span  class="elementor-icon">
+				<i aria-hidden="true" class="fas fa-video"></i>				</span>
+			</div>
+			
+						<div class="elementor-icon-box-content">
+
+				
+									<p class="elementor-icon-box-description">
+						Acesso à aulas 100% gravadas					</p>
+				
+			</div>
+			
+		</div>
+						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-4d18e82 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="4d18e82" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-a7a58fe" data-id="a7a58fe" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-d407167 elementor-widget elementor-widget-text-editor" data-id="d407167" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p>O CONTEÚDO!</p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-628f0a2 elementor-widget elementor-widget-text-editor" data-id="628f0a2" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p>O que você vai aprender nesse curso?</p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-af7ec83 elementor-arrows-position-inside elementor-pagination-position-outside elementor-widget elementor-widget-image-carousel" data-id="af7ec83" data-element_type="widget" data-settings="{&quot;slides_to_show&quot;:&quot;4&quot;,&quot;pause_on_hover&quot;:&quot;no&quot;,&quot;pause_on_interaction&quot;:&quot;no&quot;,&quot;autoplay_speed&quot;:0,&quot;speed&quot;:7000,&quot;slides_to_show_mobile&quot;:&quot;2&quot;,&quot;navigation&quot;:&quot;both&quot;,&quot;autoplay&quot;:&quot;yes&quot;,&quot;infinite&quot;:&quot;yes&quot;,&quot;image_spacing_custom&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:20,&quot;sizes&quot;:[]},&quot;image_spacing_custom_widescreen&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;image_spacing_custom_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;image_spacing_custom_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;image_spacing_custom_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;image_spacing_custom_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;image_spacing_custom_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}" data-widget_type="image-carousel.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-image-carousel-wrapper swiper" role="region" aria-roledescription="carousel" aria-label="Carrossel de imagens" dir="ltr">
+			<div class="elementor-image-carousel swiper-wrapper" aria-live="off">
+								<div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="1 de 12"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="1" data-lazy-src="https://camillichamone.com.br/wp-content/uploads/2024/02/1.png.webp" /><noscript><img decoding="async" class="swiper-slide-image" src="https://camillichamone.com.br/wp-content/uploads/2024/02/1.png.webp" alt="1" /></noscript></figure></div><div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="2 de 12"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="2" data-lazy-src="https://camillichamone.com.br/wp-content/uploads/2024/02/2.png.webp" /><noscript><img decoding="async" class="swiper-slide-image" src="https://camillichamone.com.br/wp-content/uploads/2024/02/2.png.webp" alt="2" /></noscript></figure></div><div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="3 de 12"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="3" data-lazy-src="https://camillichamone.com.br/wp-content/uploads/2024/02/3.png.webp" /><noscript><img decoding="async" class="swiper-slide-image" src="https://camillichamone.com.br/wp-content/uploads/2024/02/3.png.webp" alt="3" /></noscript></figure></div><div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="4 de 12"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="4" data-lazy-src="https://camillichamone.com.br/wp-content/uploads/2024/02/4.png" /><noscript><img decoding="async" class="swiper-slide-image" src="https://camillichamone.com.br/wp-content/uploads/2024/02/4.png" alt="4" /></noscript></figure></div><div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="5 de 12"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="5" data-lazy-src="https://camillichamone.com.br/wp-content/uploads/2024/02/5.png" /><noscript><img decoding="async" class="swiper-slide-image" src="https://camillichamone.com.br/wp-content/uploads/2024/02/5.png" alt="5" /></noscript></figure></div><div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="6 de 12"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="6" data-lazy-src="https://camillichamone.com.br/wp-content/uploads/2024/02/6.png" /><noscript><img decoding="async" class="swiper-slide-image" src="https://camillichamone.com.br/wp-content/uploads/2024/02/6.png" alt="6" /></noscript></figure></div><div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="7 de 12"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="7" data-lazy-src="https://camillichamone.com.br/wp-content/uploads/2024/02/7.png" /><noscript><img decoding="async" class="swiper-slide-image" src="https://camillichamone.com.br/wp-content/uploads/2024/02/7.png" alt="7" /></noscript></figure></div><div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="8 de 12"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="8" data-lazy-src="https://camillichamone.com.br/wp-content/uploads/2024/02/8.png" /><noscript><img decoding="async" class="swiper-slide-image" src="https://camillichamone.com.br/wp-content/uploads/2024/02/8.png" alt="8" /></noscript></figure></div><div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="9 de 12"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="9" data-lazy-src="https://camillichamone.com.br/wp-content/uploads/2024/02/9.png" /><noscript><img decoding="async" class="swiper-slide-image" src="https://camillichamone.com.br/wp-content/uploads/2024/02/9.png" alt="9" /></noscript></figure></div><div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="10 de 12"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="10" data-lazy-src="https://camillichamone.com.br/wp-content/uploads/2024/02/10.png" /><noscript><img decoding="async" class="swiper-slide-image" src="https://camillichamone.com.br/wp-content/uploads/2024/02/10.png" alt="10" /></noscript></figure></div><div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="11 de 12"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="11" data-lazy-src="https://camillichamone.com.br/wp-content/uploads/2024/02/11.png" /><noscript><img decoding="async" class="swiper-slide-image" src="https://camillichamone.com.br/wp-content/uploads/2024/02/11.png" alt="11" /></noscript></figure></div><div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="12 de 12"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="12" data-lazy-src="https://camillichamone.com.br/wp-content/uploads/2024/02/12.png" /><noscript><img decoding="async" class="swiper-slide-image" src="https://camillichamone.com.br/wp-content/uploads/2024/02/12.png" alt="12" /></noscript></figure></div>			</div>
+												<div class="elementor-swiper-button elementor-swiper-button-prev" role="button" tabindex="0">
+						<i aria-hidden="true" class="eicon-chevron-left"></i>					</div>
+					<div class="elementor-swiper-button elementor-swiper-button-next" role="button" tabindex="0">
+						<i aria-hidden="true" class="eicon-chevron-right"></i>					</div>
+				
+									<div class="swiper-pagination"></div>
+									</div>
+						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-2e9a1c1 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="2e9a1c1" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-80595c8" data-id="80595c8" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-55a64ff elementor-widget elementor-widget-text-editor" data-id="55a64ff" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p>Para <span style="color: #ffcc00;">quem </span>é esse curso?</p>								</div>
+				</div>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-a2a91ce elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="a2a91ce" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-22db5ba" data-id="22db5ba" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-24f6a74 elementor-widget elementor-widget-image" data-id="24f6a74" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img fetchpriority="high" decoding="async" width="297" height="296" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20297%20296'%3E%3C/svg%3E" class="attachment-medium size-medium wp-image-1095" alt="" data-lazy-srcset="https://camillichamone.com.br/wp-content/uploads/2020/11/Sem-título-1-01-1.png 297w, https://camillichamone.com.br/wp-content/uploads/2020/11/Sem-título-1-01-1-150x150.png 150w" data-lazy-sizes="(max-width: 297px) 100vw, 297px" data-lazy-src="https://camillichamone.com.br/wp-content/uploads/2020/11/Sem-título-1-01-1.png" /><noscript><img fetchpriority="high" decoding="async" width="297" height="296" src="https://camillichamone.com.br/wp-content/uploads/2020/11/Sem-título-1-01-1.png" class="attachment-medium size-medium wp-image-1095" alt="" srcset="https://camillichamone.com.br/wp-content/uploads/2020/11/Sem-título-1-01-1.png 297w, https://camillichamone.com.br/wp-content/uploads/2020/11/Sem-título-1-01-1-150x150.png 150w" sizes="(max-width: 297px) 100vw, 297px" /></noscript>															</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-b0d6c76" data-id="b0d6c76" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-a3f7ec6 elementor-widget elementor-widget-text-editor" data-id="a3f7ec6" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><span style="color: #ffcc00;">•</span> Tutores</p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-bd98cf5 elementor-widget elementor-widget-text-editor" data-id="bd98cf5" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p>Você entenderá totalmente esse animalzinho que levou para casa (não, eles não são mini humanos!). Aprenderá que cães precisam de muito mais, além de amor e carinho, para serem emocionalmente equilibrados. Compreenderá como eles pensam, sentem e aprendem. Será capaz de oferecer a melhor vida que o seu cãozinho poderá ter. E, indiscutivelmente, além de melhorar a vida dele, melhorará a sua também!</p>								</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-733b54d elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="733b54d" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-30eef1f" data-id="30eef1f" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-c665df0 elementor-widget elementor-widget-image" data-id="c665df0" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img decoding="async" width="297" height="297" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20297%20297'%3E%3C/svg%3E" class="attachment-medium size-medium wp-image-1096" alt="" data-lazy-srcset="https://camillichamone.com.br/wp-content/uploads/2020/11/Sem-título-1-03-1.png 297w, https://camillichamone.com.br/wp-content/uploads/2020/11/Sem-título-1-03-1-150x150.png 150w" data-lazy-sizes="(max-width: 297px) 100vw, 297px" data-lazy-src="https://camillichamone.com.br/wp-content/uploads/2020/11/Sem-título-1-03-1.png" /><noscript><img decoding="async" width="297" height="297" src="https://camillichamone.com.br/wp-content/uploads/2020/11/Sem-título-1-03-1.png" class="attachment-medium size-medium wp-image-1096" alt="" srcset="https://camillichamone.com.br/wp-content/uploads/2020/11/Sem-título-1-03-1.png 297w, https://camillichamone.com.br/wp-content/uploads/2020/11/Sem-título-1-03-1-150x150.png 150w" sizes="(max-width: 297px) 100vw, 297px" /></noscript>															</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-c017986" data-id="c017986" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-29624c1 elementor-widget elementor-widget-text-editor" data-id="29624c1" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><span style="color: #ffcc00;">• </span>Veterinários</p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-6efac11 elementor-widget elementor-widget-text-editor" data-id="6efac11" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<div data-id="33d5eeca" data-element_type="widget" data-widget_type="text-editor.default"><p>Você será capaz de atuar nas doenças de causa emocional de forma mais assertiva, sabendo como orientar tutores a melhorar o padrão emocional dos cães, desde a mais tenra idade. Isso tornará você um profissional diferenciado e mais bem sucedido nas intervenções clínicas!</p></div>								</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-187000b elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="187000b" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-78b3bc1" data-id="78b3bc1" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-0de664d elementor-widget elementor-widget-image" data-id="0de664d" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img decoding="async" width="296" height="296" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20296%20296'%3E%3C/svg%3E" class="attachment-medium size-medium wp-image-1097" alt="" data-lazy-srcset="https://camillichamone.com.br/wp-content/uploads/2020/11/Sem-título-1-02-2.png 296w, https://camillichamone.com.br/wp-content/uploads/2020/11/Sem-título-1-02-2-150x150.png 150w" data-lazy-sizes="(max-width: 296px) 100vw, 296px" data-lazy-src="https://camillichamone.com.br/wp-content/uploads/2020/11/Sem-título-1-02-2.png" /><noscript><img decoding="async" width="296" height="296" src="https://camillichamone.com.br/wp-content/uploads/2020/11/Sem-título-1-02-2.png" class="attachment-medium size-medium wp-image-1097" alt="" srcset="https://camillichamone.com.br/wp-content/uploads/2020/11/Sem-título-1-02-2.png 296w, https://camillichamone.com.br/wp-content/uploads/2020/11/Sem-título-1-02-2-150x150.png 150w" sizes="(max-width: 296px) 100vw, 296px" /></noscript>															</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-82159be" data-id="82159be" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-360d217 elementor-widget elementor-widget-text-editor" data-id="360d217" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><span style="color: #ffcc00;">• </span>Profissional pet</p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-7317838 elementor-widget elementor-widget-text-editor" data-id="7317838" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<div data-id="33d5eeca" data-element_type="widget" data-widget_type="text-editor.default"><div data-id="33d5eeca" data-element_type="widget" data-widget_type="text-editor.default"><p>Profissional do universo pet (pet sitter, dog walker, adestrador, donos de creches) – você aprenderá a verdade sobre os cães, que ninguém conta, como eles se sentem e como aprendem. Aprenderá a atuar em todos os pré-requisitos de saúde mental e emocional sendo capaz de conduzir o manejo e a reabilitação de forma mais assertiva, tendo melhores resultados.</p></div></div>								</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-8173918 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="8173918" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-8f18eef" data-id="8f18eef" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-5cbc28a elementor-widget elementor-widget-image" data-id="5cbc28a" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img loading="lazy" decoding="async" width="297" height="296" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20297%20296'%3E%3C/svg%3E" class="attachment-medium size-medium wp-image-1099" alt="" data-lazy-srcset="https://camillichamone.com.br/wp-content/uploads/2020/11/Sem-título-1-05-1.png 297w, https://camillichamone.com.br/wp-content/uploads/2020/11/Sem-título-1-05-1-150x150.png 150w" data-lazy-sizes="(max-width: 297px) 100vw, 297px" data-lazy-src="https://camillichamone.com.br/wp-content/uploads/2020/11/Sem-título-1-05-1.png" /><noscript><img loading="lazy" decoding="async" width="297" height="296" src="https://camillichamone.com.br/wp-content/uploads/2020/11/Sem-título-1-05-1.png" class="attachment-medium size-medium wp-image-1099" alt="" srcset="https://camillichamone.com.br/wp-content/uploads/2020/11/Sem-título-1-05-1.png 297w, https://camillichamone.com.br/wp-content/uploads/2020/11/Sem-título-1-05-1-150x150.png 150w" sizes="(max-width: 297px) 100vw, 297px" /></noscript>															</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-46d5d92" data-id="46d5d92" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-a5b08b7 elementor-widget elementor-widget-text-editor" data-id="a5b08b7" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><span style="color: #ffcc00;">• </span>Dog Lovers</p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-d4cc006 elementor-widget elementor-widget-text-editor" data-id="d4cc006" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<div data-id="33d5eeca" data-element_type="widget" data-widget_type="text-editor.default"><div data-id="33d5eeca" data-element_type="widget" data-widget_type="text-editor.default"><div data-id="33d5eeca" data-element_type="widget" data-widget_type="text-editor.default"><p>Você não tem um cãozinho, mas está sempre ajudando alguém que tem? A partir desse curso, sua ajuda será muito mais especial!</p></div></div></div>								</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-f125010 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="f125010" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-9f278b7" data-id="9f278b7" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-2366f29 elementor-widget elementor-widget-image" data-id="2366f29" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img loading="lazy" decoding="async" width="296" height="297" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20296%20297'%3E%3C/svg%3E" class="attachment-medium size-medium wp-image-1098" alt="" data-lazy-srcset="https://camillichamone.com.br/wp-content/uploads/2020/11/Sem-título-1-04-1.png 296w, https://camillichamone.com.br/wp-content/uploads/2020/11/Sem-título-1-04-1-150x150.png 150w" data-lazy-sizes="(max-width: 296px) 100vw, 296px" data-lazy-src="https://camillichamone.com.br/wp-content/uploads/2020/11/Sem-título-1-04-1.png" /><noscript><img loading="lazy" decoding="async" width="296" height="297" src="https://camillichamone.com.br/wp-content/uploads/2020/11/Sem-título-1-04-1.png" class="attachment-medium size-medium wp-image-1098" alt="" srcset="https://camillichamone.com.br/wp-content/uploads/2020/11/Sem-título-1-04-1.png 296w, https://camillichamone.com.br/wp-content/uploads/2020/11/Sem-título-1-04-1-150x150.png 150w" sizes="(max-width: 296px) 100vw, 296px" /></noscript>															</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-187adf4" data-id="187adf4" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-16f5ca5 elementor-widget elementor-widget-text-editor" data-id="16f5ca5" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><span style="color: #ffcc00;">• </span>Protetores</p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-f6f0fdf elementor-widget elementor-widget-text-editor" data-id="f6f0fdf" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<div data-id="33d5eeca" data-element_type="widget" data-widget_type="text-editor.default"><div data-id="33d5eeca" data-element_type="widget" data-widget_type="text-editor.default"><div data-id="33d5eeca" data-element_type="widget" data-widget_type="text-editor.default"><div data-id="33d5eeca" data-element_type="widget" data-widget_type="text-editor.default"><p>Você será capaz de melhorar a qualidade de vida dos animais resgatados e, consequentemente, melhorará o comportamento deles &#8211; o que, em última instância, aumentará as chances de adoção e reduzirá as desistências. Esse curso te norteará, de forma completa, simples e objetiva.</p></div></div></div></div>								</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-57b1526 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="57b1526" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-d4373ec" data-id="d4373ec" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-a95499d elementor-widget elementor-widget-text-editor" data-id="a95499d" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p>Você vai entender como a minha metodologia, baseada na neurociência comportamental, ajudará você de forma simples e objetiva, a melhorar o comportamento do seu cão!</p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-8c9f58d elementor-align-center elementor-widget elementor-widget-button" data-id="8c9f58d" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+									<div class="elementor-button-wrapper">
+					<a class="elementor-button elementor-button-link elementor-size-lg" href="https://pagamento.comprasegura.uno/checkout/pro-d75b13f8-4f46-47db-aa0e-471db82c2432" target="_blank">
+						<span class="elementor-button-content-wrapper">
+									<span class="elementor-button-text">SIM, EU QUERO TER ACESSO A ESSE CURSO!</span>
+					</span>
+					</a>
+				</div>
+								</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-ff31d39 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="ff31d39" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-7603396" data-id="7603396" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-68eaf9c elementor-position-left elementor-view-default elementor-mobile-position-top elementor-widget elementor-widget-icon-box" data-id="68eaf9c" data-element_type="widget" data-widget_type="icon-box.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-icon-box-wrapper">
+
+						<div class="elementor-icon-box-icon">
+				<span  class="elementor-icon">
+				<i aria-hidden="true" class="fas fa-star"></i>				</span>
+			</div>
+			
+						<div class="elementor-icon-box-content">
+
+									<h3 class="elementor-icon-box-title">
+						<span  >
+							Plataforma Exclusiva						</span>
+					</h3>
+				
+									<p class="elementor-icon-box-description">
+						Você terá acesso a nossa plataforma exclusiva de aulas, onde terá acesso a videoaulas gravadas e a material impresso. Tudo isso desenvolvido especialmente para você.					</p>
+				
+			</div>
+			
+		</div>
+						</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-c18e33b" data-id="c18e33b" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-e72f0c9 elementor-position-left elementor-view-default elementor-mobile-position-top elementor-widget elementor-widget-icon-box" data-id="e72f0c9" data-element_type="widget" data-widget_type="icon-box.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-icon-box-wrapper">
+
+						<div class="elementor-icon-box-icon">
+				<span  class="elementor-icon">
+				<i aria-hidden="true" class="fas fa-mobile-alt"></i>				</span>
+			</div>
+			
+						<div class="elementor-icon-box-content">
+
+									<h3 class="elementor-icon-box-title">
+						<span  >
+							De qualquer dispositivo						</span>
+					</h3>
+				
+									<p class="elementor-icon-box-description">
+						Você poderá participar das aulas pelo computador, tablet ou smartphone. Não é necessário adquirir webcam ou baixar o Skype. Você só precisa de uma conexão com a internet!					</p>
+				
+			</div>
+			
+		</div>
+						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-e257caa elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="e257caa" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-d12273d" data-id="d12273d" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-717462b elementor-widget elementor-widget-text-editor" data-id="717462b" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p>DEPOIMENTOS</p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-36a008e elementor-widget elementor-widget-text-editor" data-id="36a008e" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p>Veja como a <strong>Metodologia da Camilli</strong> transformou a vida dessas pessoas</p>								</div>
+				</div>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-2945af6 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="2945af6" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-60977aa" data-id="60977aa" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-a4cd47d elementor-widget elementor-widget-video" data-id="a4cd47d" data-element_type="widget" data-settings="{&quot;youtube_url&quot;:&quot;https:\/\/youtu.be\/kWkFMlzbc5Y&quot;,&quot;video_type&quot;:&quot;youtube&quot;,&quot;controls&quot;:&quot;yes&quot;}" data-widget_type="video.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-wrapper elementor-open-inline">
+			<div class="elementor-video"></div>		</div>
+						</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-e67a904" data-id="e67a904" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-566a222 elementor-widget elementor-widget-video" data-id="566a222" data-element_type="widget" data-settings="{&quot;youtube_url&quot;:&quot;https:\/\/youtu.be\/-m7ymPWcdR0&quot;,&quot;video_type&quot;:&quot;youtube&quot;,&quot;controls&quot;:&quot;yes&quot;}" data-widget_type="video.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-wrapper elementor-open-inline">
+			<div class="elementor-video"></div>		</div>
+						</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-58cba9d" data-id="58cba9d" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-a9f4814 elementor-widget elementor-widget-video" data-id="a9f4814" data-element_type="widget" data-settings="{&quot;youtube_url&quot;:&quot;https:\/\/youtu.be\/tnpU-IEmL44&quot;,&quot;video_type&quot;:&quot;youtube&quot;,&quot;controls&quot;:&quot;yes&quot;}" data-widget_type="video.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-wrapper elementor-open-inline">
+			<div class="elementor-video"></div>		</div>
+						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-5dfbb2e elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="5dfbb2e" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-f25c0e5" data-id="f25c0e5" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-71c189b elementor-widget elementor-widget-video" data-id="71c189b" data-element_type="widget" data-settings="{&quot;youtube_url&quot;:&quot;https:\/\/youtu.be\/IRGuvHepEek&quot;,&quot;video_type&quot;:&quot;youtube&quot;,&quot;controls&quot;:&quot;yes&quot;}" data-widget_type="video.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-wrapper elementor-open-inline">
+			<div class="elementor-video"></div>		</div>
+						</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-0f7a4f1" data-id="0f7a4f1" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-f1ece51 elementor-widget elementor-widget-video" data-id="f1ece51" data-element_type="widget" data-settings="{&quot;youtube_url&quot;:&quot;https:\/\/youtu.be\/fyIxinmlowM&quot;,&quot;video_type&quot;:&quot;youtube&quot;,&quot;controls&quot;:&quot;yes&quot;}" data-widget_type="video.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-wrapper elementor-open-inline">
+			<div class="elementor-video"></div>		</div>
+						</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-fe85000" data-id="fe85000" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-34582e7 elementor-widget elementor-widget-video" data-id="34582e7" data-element_type="widget" data-settings="{&quot;youtube_url&quot;:&quot;https:\/\/youtu.be\/NElF4lzEYXc&quot;,&quot;video_type&quot;:&quot;youtube&quot;,&quot;controls&quot;:&quot;yes&quot;}" data-widget_type="video.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-wrapper elementor-open-inline">
+			<div class="elementor-video"></div>		</div>
+						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-dbfe043 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="dbfe043" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-cce4003" data-id="cce4003" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-b3f3254 elementor-widget elementor-widget-text-editor" data-id="b3f3254" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p class="elementor-heading-title elementor-size-default">Para te ajudar ainda mais, separei<br />esses bônus de presente:</p>								</div>
+				</div>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-0b4a5c6 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="0b4a5c6" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-5e5a2f9" data-id="5e5a2f9" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-0831a31 elementor-position-top elementor-widget elementor-widget-image-box" data-id="0831a31" data-element_type="widget" data-widget_type="image-box.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img loading="lazy" decoding="async" width="495" height="495" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20495%20495'%3E%3C/svg%3E" class="attachment-full size-full wp-image-5164" alt="" data-lazy-srcset="https://camillichamone.com.br/wp-content/uploads/2024/01/Branco-1.png.webp 495w,https://camillichamone.com.br/wp-content/uploads/2024/01/Branco-1-300x300.png.webp 300w,https://camillichamone.com.br/wp-content/uploads/2024/01/Branco-1-150x150.png.webp 150w" data-lazy-sizes="(max-width: 495px) 100vw, 495px" data-lazy-src="https://camillichamone.com.br/wp-content/uploads/2024/01/Branco-1.png.webp" /><noscript><img loading="lazy" decoding="async" width="495" height="495" src="https://camillichamone.com.br/wp-content/uploads/2024/01/Branco-1.png.webp" class="attachment-full size-full wp-image-5164" alt="" srcset="https://camillichamone.com.br/wp-content/uploads/2024/01/Branco-1.png.webp 495w,https://camillichamone.com.br/wp-content/uploads/2024/01/Branco-1-300x300.png.webp 300w,https://camillichamone.com.br/wp-content/uploads/2024/01/Branco-1-150x150.png.webp 150w" sizes="(max-width: 495px) 100vw, 495px" /></noscript></figure><div class="elementor-image-box-content"><p class="elementor-image-box-description"><b>12 meses de acesso</b>, às aulas e ao conteúdo do curso, inclusive, às atualizações que ocorrerem nesse período</p></div></div>				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-63b757a" data-id="63b757a" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-830fea0 elementor-position-top elementor-widget elementor-widget-image-box" data-id="830fea0" data-element_type="widget" data-widget_type="image-box.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img loading="lazy" decoding="async" width="600" height="600" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20600'%3E%3C/svg%3E" class="attachment-full size-full wp-image-3920" alt="" data-lazy-srcset="https://camillichamone.com.br/wp-content/uploads/2023/01/Camilli-Chamone.webp 600w, https://camillichamone.com.br/wp-content/uploads/2023/01/Camilli-Chamone-300x300.webp 300w, https://camillichamone.com.br/wp-content/uploads/2023/01/Camilli-Chamone-150x150.webp 150w" data-lazy-sizes="(max-width: 600px) 100vw, 600px" data-lazy-src="https://camillichamone.com.br/wp-content/uploads/2023/01/Camilli-Chamone.webp" /><noscript><img loading="lazy" decoding="async" width="600" height="600" src="https://camillichamone.com.br/wp-content/uploads/2023/01/Camilli-Chamone.webp" class="attachment-full size-full wp-image-3920" alt="" srcset="https://camillichamone.com.br/wp-content/uploads/2023/01/Camilli-Chamone.webp 600w, https://camillichamone.com.br/wp-content/uploads/2023/01/Camilli-Chamone-300x300.webp 300w, https://camillichamone.com.br/wp-content/uploads/2023/01/Camilli-Chamone-150x150.webp 150w" sizes="(max-width: 600px) 100vw, 600px" /></noscript></figure><div class="elementor-image-box-content"><p class="elementor-image-box-description">Aula bônus sobre o <b>detox do estresse em humanos</b>, com a própria Dra. Camilli Chamone</span></p></div></div>				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-0b347d6" data-id="0b347d6" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-ac5eec2 elementor-position-top elementor-widget elementor-widget-image-box" data-id="ac5eec2" data-element_type="widget" data-widget_type="image-box.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img loading="lazy" decoding="async" width="600" height="600" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20600'%3E%3C/svg%3E" class="attachment-full size-full wp-image-3922" alt="" data-lazy-srcset="https://camillichamone.com.br/wp-content/uploads/2023/01/Gabriela-Rodrigues.webp 600w, https://camillichamone.com.br/wp-content/uploads/2023/01/Gabriela-Rodrigues-300x300.webp 300w, https://camillichamone.com.br/wp-content/uploads/2023/01/Gabriela-Rodrigues-150x150.webp 150w" data-lazy-sizes="(max-width: 600px) 100vw, 600px" data-lazy-src="https://camillichamone.com.br/wp-content/uploads/2023/01/Gabriela-Rodrigues.webp" /><noscript><img loading="lazy" decoding="async" width="600" height="600" src="https://camillichamone.com.br/wp-content/uploads/2023/01/Gabriela-Rodrigues.webp" class="attachment-full size-full wp-image-3922" alt="" srcset="https://camillichamone.com.br/wp-content/uploads/2023/01/Gabriela-Rodrigues.webp 600w, https://camillichamone.com.br/wp-content/uploads/2023/01/Gabriela-Rodrigues-300x300.webp 300w, https://camillichamone.com.br/wp-content/uploads/2023/01/Gabriela-Rodrigues-150x150.webp 150w" sizes="(max-width: 600px) 100vw, 600px" /></noscript></figure><div class="elementor-image-box-content"><p class="elementor-image-box-description">Aula bônus com a médica veterinária Dra. Gabriela Rodrigues: <b>Promoção de saúde em cães<b /></p></div></div>				</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-69960a1 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="69960a1" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-d7bd710" data-id="d7bd710" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-4a9cede elementor-position-top elementor-widget elementor-widget-image-box" data-id="4a9cede" data-element_type="widget" data-widget_type="image-box.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img loading="lazy" decoding="async" width="600" height="600" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20600'%3E%3C/svg%3E" class="attachment-full size-full wp-image-3923" alt="" data-lazy-srcset="https://camillichamone.com.br/wp-content/uploads/2023/01/Naiana-Perobelli.webp 600w, https://camillichamone.com.br/wp-content/uploads/2023/01/Naiana-Perobelli-300x300.webp 300w, https://camillichamone.com.br/wp-content/uploads/2023/01/Naiana-Perobelli-150x150.webp 150w" data-lazy-sizes="(max-width: 600px) 100vw, 600px" data-lazy-src="https://camillichamone.com.br/wp-content/uploads/2023/01/Naiana-Perobelli.webp" /><noscript><img loading="lazy" decoding="async" width="600" height="600" src="https://camillichamone.com.br/wp-content/uploads/2023/01/Naiana-Perobelli.webp" class="attachment-full size-full wp-image-3923" alt="" srcset="https://camillichamone.com.br/wp-content/uploads/2023/01/Naiana-Perobelli.webp 600w, https://camillichamone.com.br/wp-content/uploads/2023/01/Naiana-Perobelli-300x300.webp 300w, https://camillichamone.com.br/wp-content/uploads/2023/01/Naiana-Perobelli-150x150.webp 150w" sizes="(max-width: 600px) 100vw, 600px" /></noscript></figure><div class="elementor-image-box-content"><p class="elementor-image-box-description">Aula Bônus com a médica veterinária Dra. Naiara Perobelli: <b>Alimentação natural para cães</b></p></div></div>				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-8b34e81" data-id="8b34e81" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-6568a54 elementor-position-top elementor-widget elementor-widget-image-box" data-id="6568a54" data-element_type="widget" data-widget_type="image-box.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img loading="lazy" decoding="async" width="600" height="600" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20600'%3E%3C/svg%3E" class="attachment-full size-full wp-image-3921" alt="" data-lazy-srcset="https://camillichamone.com.br/wp-content/uploads/2023/01/CARLA-BARBARO.webp 600w, https://camillichamone.com.br/wp-content/uploads/2023/01/CARLA-BARBARO-300x300.webp 300w, https://camillichamone.com.br/wp-content/uploads/2023/01/CARLA-BARBARO-150x150.webp 150w" data-lazy-sizes="(max-width: 600px) 100vw, 600px" data-lazy-src="https://camillichamone.com.br/wp-content/uploads/2023/01/CARLA-BARBARO.webp" /><noscript><img loading="lazy" decoding="async" width="600" height="600" src="https://camillichamone.com.br/wp-content/uploads/2023/01/CARLA-BARBARO.webp" class="attachment-full size-full wp-image-3921" alt="" srcset="https://camillichamone.com.br/wp-content/uploads/2023/01/CARLA-BARBARO.webp 600w, https://camillichamone.com.br/wp-content/uploads/2023/01/CARLA-BARBARO-300x300.webp 300w, https://camillichamone.com.br/wp-content/uploads/2023/01/CARLA-BARBARO-150x150.webp 150w" sizes="(max-width: 600px) 100vw, 600px" /></noscript></figure><div class="elementor-image-box-content"><p class="elementor-image-box-description">Aula Bônus com a expert em manejo de cães em grupo, Carla Bárbaro Venturelli: <b>Como escolher uma creche para o meu cão?</b></p></div></div>				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-cce3faa" data-id="cce3faa" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-4900db9 elementor-position-top elementor-widget elementor-widget-image-box" data-id="4900db9" data-element_type="widget" data-widget_type="image-box.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img loading="lazy" decoding="async" width="600" height="600" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20600'%3E%3C/svg%3E" class="attachment-full size-full wp-image-3919" alt="" data-lazy-srcset="https://camillichamone.com.br/wp-content/uploads/2023/01/ALEXANDRE-ZARA.webp 600w, https://camillichamone.com.br/wp-content/uploads/2023/01/ALEXANDRE-ZARA-300x300.webp 300w, https://camillichamone.com.br/wp-content/uploads/2023/01/ALEXANDRE-ZARA-150x150.webp 150w" data-lazy-sizes="(max-width: 600px) 100vw, 600px" data-lazy-src="https://camillichamone.com.br/wp-content/uploads/2023/01/ALEXANDRE-ZARA.webp" /><noscript><img loading="lazy" decoding="async" width="600" height="600" src="https://camillichamone.com.br/wp-content/uploads/2023/01/ALEXANDRE-ZARA.webp" class="attachment-full size-full wp-image-3919" alt="" srcset="https://camillichamone.com.br/wp-content/uploads/2023/01/ALEXANDRE-ZARA.webp 600w, https://camillichamone.com.br/wp-content/uploads/2023/01/ALEXANDRE-ZARA-300x300.webp 300w, https://camillichamone.com.br/wp-content/uploads/2023/01/ALEXANDRE-ZARA-150x150.webp 150w" sizes="(max-width: 600px) 100vw, 600px" /></noscript></figure><div class="elementor-image-box-content"><p class="elementor-image-box-description">Aula Bônus com o médico veterinário Dr. Alexandre Zara: <b>Não permita que adoeçam seu cão!<b></p></div></div>				</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-b8bf02d elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="b8bf02d" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-628d136" data-id="628d136" data-element_type="column">
+			<div class="elementor-widget-wrap">
+							</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-f989f24" data-id="f989f24" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-e1a692f elementor-widget elementor-widget-text-editor" data-id="e1a692f" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p>Quem vai <span style="color: #ffcc00;">te guiar?</span></p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-8feba92 elementor-widget elementor-widget-text-editor" data-id="8feba92" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p class="p1">Camilli Chamone é pós-graduada em Neurociências, Genética e Biologia Molecular. Foi professora universitária federal de Biologia Celular, Genética e Evolução.</p><p class="p1">Criou cães da raça buldogue francês. Foi membro efetivo do Conselho Disciplinar do Kennel Clube de Belo Horizonte. Foi Diretora da Federação Mineira de Cinofilia. Em 2008, criou o blog “Seu Buldogue Francês”, que acabou tornando-se o maior do mundo sobre saúde, bem-estar, comportamento e educação neuro compatível para cães.<span class="Apple-converted-space"> </span></p><p class="p1">É editora de todas as mídias sociais “Camilli Chamone”, oferecendo conteúdo gratuito, que é acessado por milhões de pessoas.</p><p class="p1">Em 2016, lançou o livro “Genética da Pelagem em Cães”, que já foi traduzido para a língua inglesa e espanhola.</p><p class="p1">Em 2022, lançou o primeiro e único curso do mundo sobre a Neurociência Aplicada ao Comportamento Canino (NaCCa).</p><p class="p1">É palestrante e consultora sobre bem-estar e comportamento canino, possuindo inúmeros cursos online sobre o tema.<span class="Apple-converted-space"> </span></p><p class="p1">É perdida e irremediavelmente apaixonada por cães, desde que se entende por gente!<span class="Apple-converted-space"> </span></p><p class="p1">Além disso, sonha em regulamentar a profissão de adestrador e comportamentalista canino, para que todos os profissionais levem ciência e qualidade de vida a seus clientes. </p>								</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-69b5bcd elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="69b5bcd" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-cb713c5" data-id="cb713c5" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-8d38665 elementor-widget elementor-widget-text-editor" data-id="8d38665" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p class="p1">Inscreva-se no <span style="color: #ffcc00;">Descãoplica!</span></p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-76bfd9a elementor-headline--style-highlight elementor-widget elementor-widget-animated-headline" data-id="76bfd9a" data-element_type="widget" data-settings="{&quot;marker&quot;:&quot;x&quot;,&quot;highlighted_text&quot;:&quot;R$1597,00&quot;,&quot;headline_style&quot;:&quot;highlight&quot;,&quot;loop&quot;:&quot;yes&quot;,&quot;highlight_animation_duration&quot;:1200,&quot;highlight_iteration_delay&quot;:8000}" data-widget_type="animated-headline.default">
+				<div class="elementor-widget-container">
+							<h3 class="elementor-headline">
+					<span class="elementor-headline-plain-text elementor-headline-text-wrapper">De</span>
+				<span class="elementor-headline-dynamic-wrapper elementor-headline-text-wrapper">
+					<span class="elementor-headline-dynamic-text elementor-headline-text-active">R$1597,00</span>
+				</span>
+				</h3>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-06ca9f3 elementor-widget elementor-widget-text-editor" data-id="06ca9f3" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p class="p1"></p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-fd6c51a elementor-widget elementor-widget-text-editor" data-id="fd6c51a" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p class="p1">R$597,00</p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-addce17 elementor-align-center elementor-widget elementor-widget-button" data-id="addce17" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+									<div class="elementor-button-wrapper">
+					<a class="elementor-button elementor-button-link elementor-size-xl" href="https://pagamento.comprasegura.uno/checkout/pro-d75b13f8-4f46-47db-aa0e-471db82c2432" target="_blank">
+						<span class="elementor-button-content-wrapper">
+									<span class="elementor-button-text">SIM, QUERO ME INSCREVER!</span>
+					</span>
+					</a>
+				</div>
+								</div>
+				</div>
+				<div class="elementor-element elementor-element-17cfcd7 elementor-widget elementor-widget-image" data-id="17cfcd7" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img loading="lazy" decoding="async" width="800" height="95" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20800%2095'%3E%3C/svg%3E" class="attachment-large size-large wp-image-3750" alt="" data-lazy-srcset="https://camillichamone.com.br/wp-content/uploads/2022/11/bandeiras-card.png 858w, https://camillichamone.com.br/wp-content/uploads/2022/11/bandeiras-card-300x36.png 300w, https://camillichamone.com.br/wp-content/uploads/2022/11/bandeiras-card-768x91.png 768w" data-lazy-sizes="(max-width: 800px) 100vw, 800px" data-lazy-src="https://camillichamone.com.br/wp-content/uploads/2022/11/bandeiras-card.png" /><noscript><img loading="lazy" decoding="async" width="800" height="95" src="https://camillichamone.com.br/wp-content/uploads/2022/11/bandeiras-card.png" class="attachment-large size-large wp-image-3750" alt="" srcset="https://camillichamone.com.br/wp-content/uploads/2022/11/bandeiras-card.png 858w, https://camillichamone.com.br/wp-content/uploads/2022/11/bandeiras-card-300x36.png 300w, https://camillichamone.com.br/wp-content/uploads/2022/11/bandeiras-card-768x91.png 768w" sizes="(max-width: 800px) 100vw, 800px" /></noscript>															</div>
+				</div>
+				<div class="elementor-element elementor-element-1e35df4 elementor-widget elementor-widget-text-editor" data-id="1e35df4" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p class="p2">*Custos adicionais da operadora do cartão de crédito. Não temos qualquer participação na cobrança ou recebimento de juros.</p>								</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-ebea12d elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="ebea12d" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-1a407ad" data-id="1a407ad" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-124e0c3 elementor-widget elementor-widget-image" data-id="124e0c3" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img loading="lazy" decoding="async" width="784" height="1024" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20784%201024'%3E%3C/svg%3E" class="attachment-large size-large wp-image-2782" alt="" data-lazy-srcset="https://camillichamone.com.br/wp-content/uploads/2021/08/selo-garantia-cópia3-1-784x1024.png.webp 784w,https://camillichamone.com.br/wp-content/uploads/2021/08/selo-garantia-cópia3-1-230x300.png.webp 230w,https://camillichamone.com.br/wp-content/uploads/2021/08/selo-garantia-cópia3-1-768x1003.png.webp 768w,https://camillichamone.com.br/wp-content/uploads/2021/08/selo-garantia-cópia3-1.png.webp 801w" data-lazy-sizes="(max-width: 784px) 100vw, 784px" data-lazy-src="https://camillichamone.com.br/wp-content/uploads/2021/08/selo-garantia-cópia3-1-784x1024.png.webp" /><noscript><img loading="lazy" decoding="async" width="784" height="1024" src="https://camillichamone.com.br/wp-content/uploads/2021/08/selo-garantia-cópia3-1-784x1024.png.webp" class="attachment-large size-large wp-image-2782" alt="" srcset="https://camillichamone.com.br/wp-content/uploads/2021/08/selo-garantia-cópia3-1-784x1024.png.webp 784w,https://camillichamone.com.br/wp-content/uploads/2021/08/selo-garantia-cópia3-1-230x300.png.webp 230w,https://camillichamone.com.br/wp-content/uploads/2021/08/selo-garantia-cópia3-1-768x1003.png.webp 768w,https://camillichamone.com.br/wp-content/uploads/2021/08/selo-garantia-cópia3-1.png.webp 801w" sizes="(max-width: 784px) 100vw, 784px" /></noscript>															</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-28a6d68" data-id="28a6d68" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-0bb08d4 elementor-widget elementor-widget-text-editor" data-id="0bb08d4" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p>RISCO ZERO</p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-7538daa elementor-widget elementor-widget-text-editor" data-id="7538daa" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><b>Caso o curso não alcance as suas expectativas, dentro de 7 dias, você pode enviar um e-mail para o nosso suporte, pedindo o reembolso e o cancelamento da inscrição.<br /><br />E agora? Você se sente mais seguro para dar esse passo que mudará a vida do seu cãozinho e a sua também?</b></p>								</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-4a28159 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="4a28159" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-e839e7e" data-id="e839e7e" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-dfd790f elementor-widget elementor-widget-text-editor" data-id="dfd790f" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p>Dúvidas <span style="color: #ffcc00;">frequentes</span></p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-44f3b0e elementor-widget elementor-widget-toggle" data-id="44f3b0e" data-element_type="widget" data-widget_type="toggle.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-toggle">
+							<div class="elementor-toggle-item">
+					<div id="elementor-tab-title-7231" class="elementor-tab-title" data-tab="1" role="button" aria-controls="elementor-tab-content-7231" aria-expanded="false">
+												<span class="elementor-toggle-icon elementor-toggle-icon-left" aria-hidden="true">
+															<span class="elementor-toggle-icon-closed"><i class="fas fa-caret-right"></i></span>
+								<span class="elementor-toggle-icon-opened"><i class="elementor-toggle-icon-opened fas fa-caret-up"></i></span>
+													</span>
+												<a class="elementor-toggle-title" tabindex="0">Como posso adquirir esse curso?</a>
+					</div>
+
+					<div id="elementor-tab-content-7231" class="elementor-tab-content elementor-clearfix" data-tab="1" role="region" aria-labelledby="elementor-tab-title-7231"><p><a href="https://pagamento.comprasegura.uno/checkout/pro-d75b13f8-4f46-47db-aa0e-471db82c2432"><b>Basta clicar aqui</b></a><b> </b><span style="font-weight: 400;">e você será redirecionado à página de vendas do curso. Preencha os dados solicitados (seu nome, e-mail, forma de pagamento), efetue o pagamento e, assim que ele for confirmado, você receberá o acesso.</span></p></div>
+				</div>
+							<div class="elementor-toggle-item">
+					<div id="elementor-tab-title-7232" class="elementor-tab-title" data-tab="2" role="button" aria-controls="elementor-tab-content-7232" aria-expanded="false">
+												<span class="elementor-toggle-icon elementor-toggle-icon-left" aria-hidden="true">
+															<span class="elementor-toggle-icon-closed"><i class="fas fa-caret-right"></i></span>
+								<span class="elementor-toggle-icon-opened"><i class="elementor-toggle-icon-opened fas fa-caret-up"></i></span>
+													</span>
+												<a class="elementor-toggle-title" tabindex="0">Por quanto tempo poderei acessar o curso?</a>
+					</div>
+
+					<div id="elementor-tab-content-7232" class="elementor-tab-content elementor-clearfix" data-tab="2" role="region" aria-labelledby="elementor-tab-title-7232"><p>O acesso a esse curso é de 12 meses e você poderá ingressá-lo de qualquer lugar que tenha conexão com a internet.</p></div>
+				</div>
+							<div class="elementor-toggle-item">
+					<div id="elementor-tab-title-7233" class="elementor-tab-title" data-tab="3" role="button" aria-controls="elementor-tab-content-7233" aria-expanded="false">
+												<span class="elementor-toggle-icon elementor-toggle-icon-left" aria-hidden="true">
+															<span class="elementor-toggle-icon-closed"><i class="fas fa-caret-right"></i></span>
+								<span class="elementor-toggle-icon-opened"><i class="elementor-toggle-icon-opened fas fa-caret-up"></i></span>
+													</span>
+												<a class="elementor-toggle-title" tabindex="0">Receberei um certificado após assistir o curso?</a>
+					</div>
+
+					<div id="elementor-tab-content-7233" class="elementor-tab-content elementor-clearfix" data-tab="3" role="region" aria-labelledby="elementor-tab-title-7233"><p><span style="font-weight: 400;">Sim. Após assistir 100% do curso, a plataforma disponibilizará um certificado personalizado para você.</span></p></div>
+				</div>
+							<div class="elementor-toggle-item">
+					<div id="elementor-tab-title-7234" class="elementor-tab-title" data-tab="4" role="button" aria-controls="elementor-tab-content-7234" aria-expanded="false">
+												<span class="elementor-toggle-icon elementor-toggle-icon-left" aria-hidden="true">
+															<span class="elementor-toggle-icon-closed"><i class="fas fa-caret-right"></i></span>
+								<span class="elementor-toggle-icon-opened"><i class="elementor-toggle-icon-opened fas fa-caret-up"></i></span>
+													</span>
+												<a class="elementor-toggle-title" tabindex="0">Conseguirei melhorar o comportamento do meu cãozinho colocando em prática o que foi ensinado no curso?</a>
+					</div>
+
+					<div id="elementor-tab-content-7234" class="elementor-tab-content elementor-clearfix" data-tab="4" role="region" aria-labelledby="elementor-tab-title-7234"><p>Sim! Todas as nossas estratégias são baseadas na neurociência comportamental, amplamente endossada cientificamente. Só não alcançará resultados quem não praticar o que ensinamos!!!</p></div>
+				</div>
+							<div class="elementor-toggle-item">
+					<div id="elementor-tab-title-7235" class="elementor-tab-title" data-tab="5" role="button" aria-controls="elementor-tab-content-7235" aria-expanded="false">
+												<span class="elementor-toggle-icon elementor-toggle-icon-left" aria-hidden="true">
+															<span class="elementor-toggle-icon-closed"><i class="fas fa-caret-right"></i></span>
+								<span class="elementor-toggle-icon-opened"><i class="elementor-toggle-icon-opened fas fa-caret-up"></i></span>
+													</span>
+												<a class="elementor-toggle-title" tabindex="0">Por que não posso simplesmente contratar um adestrador, para corrigir os problemas de comportamento do meu cão? </a>
+					</div>
+
+					<div id="elementor-tab-content-7235" class="elementor-tab-content elementor-clearfix" data-tab="5" role="region" aria-labelledby="elementor-tab-title-7235"><p>Contratar um adestrador e esperar que ele (sozinho) resolva os problemas de comportamento seu do cão, faz tanto sentido quanto esperar que a escola assuma a responsabilidade de educar uma criança, eximindo o papel principal dos pais.</p><p>Todos os problemas de comportamento dos cachorros, sem exceção, são derivados da falta de entendimento acerca do universo canino. Portanto, enquanto você não se empenhar em compreender o universo canino, haverá expectativas equivocadas e muitos problemas!</p><p>Nesse curso, ajudamos você nesse processo! 🙂</p></div>
+				</div>
+							<div class="elementor-toggle-item">
+					<div id="elementor-tab-title-7236" class="elementor-tab-title" data-tab="6" role="button" aria-controls="elementor-tab-content-7236" aria-expanded="false">
+												<span class="elementor-toggle-icon elementor-toggle-icon-left" aria-hidden="true">
+															<span class="elementor-toggle-icon-closed"><i class="fas fa-caret-right"></i></span>
+								<span class="elementor-toggle-icon-opened"><i class="elementor-toggle-icon-opened fas fa-caret-up"></i></span>
+													</span>
+												<a class="elementor-toggle-title" tabindex="0">Esse é um curso de formação profissional?</a>
+					</div>
+
+					<div id="elementor-tab-content-7236" class="elementor-tab-content elementor-clearfix" data-tab="6" role="region" aria-labelledby="elementor-tab-title-7236"><p><span style="color: var( --e-global-color-text );">Para a formação profissional, indicamos o curso DesCãoplica, que aborda a parte prática da reabilitação comportamental, somado ao curso de <a href="https://pagamento.comprasegura.uno/checkout/pro-d75b13f8-4f46-47db-aa0e-471db82c2432">Neurociência Aplicada ao Comportamento Canino (NaCCa)</a>. </span></p></div>
+				</div>
+								</div>
+						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-4798951 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="4798951" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-e447779" data-id="e447779" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-3b1f453 elementor-widget elementor-widget-text-editor" data-id="3b1f453" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p class="p1">Ainda com <span style="color: #ffcc00;">dúvidas?</span></p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-8eed9ca elementor-widget elementor-widget-text-editor" data-id="8eed9ca" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p>Fale com a nossa equipe!</p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-3471e82 elementor-align-center elementor-widget elementor-widget-button" data-id="3471e82" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+									<div class="elementor-button-wrapper">
+					<a class="elementor-button elementor-button-link elementor-size-lg" href="" target="_blank">
+						<span class="elementor-button-content-wrapper">
+									<span class="elementor-button-text">Atendimento via Whatsapp</span>
+					</span>
+					</a>
+				</div>
+								</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-012c053 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="012c053" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-7c79bda" data-id="7c79bda" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-8d2877e elementor-shape-rounded elementor-grid-0 e-grid-align-center elementor-widget elementor-widget-social-icons" data-id="8d2877e" data-element_type="widget" data-widget_type="social-icons.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-social-icons-wrapper elementor-grid" role="list">
+							<span class="elementor-grid-item" role="listitem">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-repeater-item-868a1f1" href="https://www.facebook.com/seubuldoguefrances" target="_blank">
+						<span class="elementor-screen-only">Facebook</span>
+						<i aria-hidden="true" class="fab fa-facebook"></i>					</a>
+				</span>
+							<span class="elementor-grid-item" role="listitem">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-repeater-item-fd1873b" href="https://www.youtube.com/channel/UCeBN7GLbku32Z_mQa8fUfjQ" target="_blank">
+						<span class="elementor-screen-only">Youtube</span>
+						<i aria-hidden="true" class="fab fa-youtube"></i>					</a>
+				</span>
+							<span class="elementor-grid-item" role="listitem">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-repeater-item-1ec5cd9" href="https://www.instagram.com/camilli_chamone/" target="_blank">
+						<span class="elementor-screen-only">Instagram</span>
+						<i aria-hidden="true" class="fab fa-instagram"></i>					</a>
+				</span>
+							<span class="elementor-grid-item" role="listitem">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-telegram elementor-repeater-item-b44d701" href="https://t.me/joinchat/AAAAAFGWxCfbUC5JY7K-KA" target="_blank">
+						<span class="elementor-screen-only">Telegram</span>
+						<i aria-hidden="true" class="fab fa-telegram"></i>					</a>
+				</span>
+					</div>
+						</div>
+				</div>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-a2ffaaa elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="a2ffaaa" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-8e05b74" data-id="8e05b74" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-1d30b66 elementor-widget elementor-widget-image" data-id="1d30b66" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img loading="lazy" decoding="async" width="800" height="800" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20800%20800'%3E%3C/svg%3E" class="attachment-large size-large wp-image-3444" alt="" data-lazy-srcset="https://camillichamone.com.br/wp-content/uploads/2022/10/png-3-1024x1024.png.webp 1024w,https://camillichamone.com.br/wp-content/uploads/2022/10/png-3-300x300.png.webp 300w,https://camillichamone.com.br/wp-content/uploads/2022/10/png-3-150x150.png.webp 150w,https://camillichamone.com.br/wp-content/uploads/2022/10/png-3-768x768.png.webp 768w,https://camillichamone.com.br/wp-content/uploads/2022/10/png-3-1536x1536.png.webp 1536w,https://camillichamone.com.br/wp-content/uploads/2022/10/png-3.png.webp 2000w" data-lazy-sizes="(max-width: 800px) 100vw, 800px" data-lazy-src="https://camillichamone.com.br/wp-content/uploads/2022/10/png-3-1024x1024.png.webp" /><noscript><img loading="lazy" decoding="async" width="800" height="800" src="https://camillichamone.com.br/wp-content/uploads/2022/10/png-3-1024x1024.png.webp" class="attachment-large size-large wp-image-3444" alt="" srcset="https://camillichamone.com.br/wp-content/uploads/2022/10/png-3-1024x1024.png.webp 1024w,https://camillichamone.com.br/wp-content/uploads/2022/10/png-3-300x300.png.webp 300w,https://camillichamone.com.br/wp-content/uploads/2022/10/png-3-150x150.png.webp 150w,https://camillichamone.com.br/wp-content/uploads/2022/10/png-3-768x768.png.webp 768w,https://camillichamone.com.br/wp-content/uploads/2022/10/png-3-1536x1536.png.webp 1536w,https://camillichamone.com.br/wp-content/uploads/2022/10/png-3.png.webp 2000w" sizes="(max-width: 800px) 100vw, 800px" /></noscript>															</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-1f86f11" data-id="1f86f11" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-f88755f elementor-widget elementor-widget-text-editor" data-id="f88755f" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p class="p1"><span class="s1">Camilli Chamone ©<span class="Apple-converted-space">  </span>– Todos os direitos reservados</span></p>								</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+					</div>
+		</div>
+					</div>
+		</section>
+				</div>
+		<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/hello-elementor\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<!--googleoff: all--><div id="cookie-law-info-bar" data-nosnippet="true"><span><div class="cli-bar-container cli-style-v2"><div class="cli-bar-message">Este site utiliza cookies e tecnologias semelhantes para personalizar publicidade e recomendar conteúdo de seu interesse. Ao navegar em nosso serviço você aceita tal monitoramento. Para mais informações leia nossas Políticas de privacidade.</div><div class="cli-bar-btn_container"><a role='button' class="cli_settings_button" style="margin:0px 10px 0px 5px">Política de Privacidade</a><a role='button' data-cli_action="accept" id="cookie_action_close_header" class="medium cli-plugin-button cli-plugin-main-button cookie_action_close_header cli_action_button wt-cli-accept-btn" style="display:inline-block">Aceito</a></div></div></span></div><div id="cookie-law-info-again" style="display:none" data-nosnippet="true"><span id="cookie_hdr_showagain">Manage consent</span></div><div class="cli-modal" data-nosnippet="true" id="cliSettingsPopup" tabindex="-1" role="dialog" aria-labelledby="cliSettingsPopup" aria-hidden="true">
+  <div class="cli-modal-dialog" role="document">
+	<div class="cli-modal-content cli-bar-popup">
+		  <button type="button" class="cli-modal-close" id="cliModalClose">
+			<svg class="" viewBox="0 0 24 24"><path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"></path><path d="M0 0h24v24h-24z" fill="none"></path></svg>
+			<span class="wt-cli-sr-only">Fechar</span>
+		  </button>
+		  <div class="cli-modal-body">
+			<div class="cli-container-fluid cli-tab-container">
+	<div class="cli-row">
+		<div class="cli-col-12 cli-align-items-stretch cli-px-0">
+			<div class="cli-privacy-overview">
+				<h4>Privacy Overview</h4>				<div class="cli-privacy-content">
+					<div class="cli-privacy-content-text">This website uses cookies to improve your experience while you navigate through the website. Out of these, the cookies that are categorized as necessary are stored on your browser as they are essential for the working of basic functionalities of the website. We also use third-party cookies that help us analyze and understand how you use this website. These cookies will be stored in your browser only with your consent. You also have the option to opt-out of these cookies. But opting out of some of these cookies may affect your browsing experience.</div>
+				</div>
+				<a class="cli-privacy-readmore" aria-label="Mostrar mais" role="button" data-readmore-text="Mostrar mais" data-readless-text="Mostrar menos"></a>			</div>
+		</div>
+		<div class="cli-col-12 cli-align-items-stretch cli-px-0 cli-tab-section-container">
+												<div class="cli-tab-section">
+						<div class="cli-tab-header">
+							<a role="button" tabindex="0" class="cli-nav-link cli-settings-mobile" data-target="necessary" data-toggle="cli-toggle-tab">
+								Necessary							</a>
+															<div class="wt-cli-necessary-checkbox">
+									<input type="checkbox" class="cli-user-preference-checkbox"  id="wt-cli-checkbox-necessary" data-id="checkbox-necessary" checked="checked"  />
+									<label class="form-check-label" for="wt-cli-checkbox-necessary">Necessary</label>
+								</div>
+								<span class="cli-necessary-caption">Sempre ativado</span>
+													</div>
+						<div class="cli-tab-content">
+							<div class="cli-tab-pane cli-fade" data-id="necessary">
+								<div class="wt-cli-cookie-description">
+									Necessary cookies are absolutely essential for the website to function properly. These cookies ensure basic functionalities and security features of the website, anonymously.
+<table class="cookielawinfo-row-cat-table cookielawinfo-winter"><thead><tr><th class="cookielawinfo-column-1">Cookie</th><th class="cookielawinfo-column-3">Duração</th><th class="cookielawinfo-column-4">Descrição</th></tr></thead><tbody><tr class="cookielawinfo-row"><td class="cookielawinfo-column-1">cookielawinfo-checbox-analytics</td><td class="cookielawinfo-column-3">11 months</td><td class="cookielawinfo-column-4">This cookie is set by GDPR Cookie Consent plugin. The cookie is used to store the user consent for the cookies in the category "Analytics".</td></tr><tr class="cookielawinfo-row"><td class="cookielawinfo-column-1">cookielawinfo-checbox-functional</td><td class="cookielawinfo-column-3">11 months</td><td class="cookielawinfo-column-4">The cookie is set by GDPR cookie consent to record the user consent for the cookies in the category "Functional".</td></tr><tr class="cookielawinfo-row"><td class="cookielawinfo-column-1">cookielawinfo-checbox-others</td><td class="cookielawinfo-column-3">11 months</td><td class="cookielawinfo-column-4">This cookie is set by GDPR Cookie Consent plugin. The cookie is used to store the user consent for the cookies in the category "Other.</td></tr><tr class="cookielawinfo-row"><td class="cookielawinfo-column-1">cookielawinfo-checkbox-necessary</td><td class="cookielawinfo-column-3">11 months</td><td class="cookielawinfo-column-4">This cookie is set by GDPR Cookie Consent plugin. The cookies is used to store the user consent for the cookies in the category "Necessary".</td></tr><tr class="cookielawinfo-row"><td class="cookielawinfo-column-1">cookielawinfo-checkbox-performance</td><td class="cookielawinfo-column-3">11 months</td><td class="cookielawinfo-column-4">This cookie is set by GDPR Cookie Consent plugin. The cookie is used to store the user consent for the cookies in the category "Performance".</td></tr><tr class="cookielawinfo-row"><td class="cookielawinfo-column-1">viewed_cookie_policy</td><td class="cookielawinfo-column-3">11 months</td><td class="cookielawinfo-column-4">The cookie is set by the GDPR Cookie Consent plugin and is used to store whether or not user has consented to the use of cookies. It does not store any personal data.</td></tr></tbody></table>								</div>
+							</div>
+						</div>
+					</div>
+																	<div class="cli-tab-section">
+						<div class="cli-tab-header">
+							<a role="button" tabindex="0" class="cli-nav-link cli-settings-mobile" data-target="functional" data-toggle="cli-toggle-tab">
+								Functional							</a>
+															<div class="cli-switch">
+									<input type="checkbox" id="wt-cli-checkbox-functional" class="cli-user-preference-checkbox"  data-id="checkbox-functional" />
+									<label for="wt-cli-checkbox-functional" class="cli-slider" data-cli-enable="Ativado" data-cli-disable="Desativado"><span class="wt-cli-sr-only">Functional</span></label>
+								</div>
+													</div>
+						<div class="cli-tab-content">
+							<div class="cli-tab-pane cli-fade" data-id="functional">
+								<div class="wt-cli-cookie-description">
+									Functional cookies help to perform certain functionalities like sharing the content of the website on social media platforms, collect feedbacks, and other third-party features.
+								</div>
+							</div>
+						</div>
+					</div>
+																	<div class="cli-tab-section">
+						<div class="cli-tab-header">
+							<a role="button" tabindex="0" class="cli-nav-link cli-settings-mobile" data-target="performance" data-toggle="cli-toggle-tab">
+								Performance							</a>
+															<div class="cli-switch">
+									<input type="checkbox" id="wt-cli-checkbox-performance" class="cli-user-preference-checkbox"  data-id="checkbox-performance" />
+									<label for="wt-cli-checkbox-performance" class="cli-slider" data-cli-enable="Ativado" data-cli-disable="Desativado"><span class="wt-cli-sr-only">Performance</span></label>
+								</div>
+													</div>
+						<div class="cli-tab-content">
+							<div class="cli-tab-pane cli-fade" data-id="performance">
+								<div class="wt-cli-cookie-description">
+									Performance cookies are used to understand and analyze the key performance indexes of the website which helps in delivering a better user experience for the visitors.
+								</div>
+							</div>
+						</div>
+					</div>
+																	<div class="cli-tab-section">
+						<div class="cli-tab-header">
+							<a role="button" tabindex="0" class="cli-nav-link cli-settings-mobile" data-target="analytics" data-toggle="cli-toggle-tab">
+								Analytics							</a>
+															<div class="cli-switch">
+									<input type="checkbox" id="wt-cli-checkbox-analytics" class="cli-user-preference-checkbox"  data-id="checkbox-analytics" />
+									<label for="wt-cli-checkbox-analytics" class="cli-slider" data-cli-enable="Ativado" data-cli-disable="Desativado"><span class="wt-cli-sr-only">Analytics</span></label>
+								</div>
+													</div>
+						<div class="cli-tab-content">
+							<div class="cli-tab-pane cli-fade" data-id="analytics">
+								<div class="wt-cli-cookie-description">
+									Analytical cookies are used to understand how visitors interact with the website. These cookies help provide information on metrics the number of visitors, bounce rate, traffic source, etc.
+								</div>
+							</div>
+						</div>
+					</div>
+																	<div class="cli-tab-section">
+						<div class="cli-tab-header">
+							<a role="button" tabindex="0" class="cli-nav-link cli-settings-mobile" data-target="advertisement" data-toggle="cli-toggle-tab">
+								Advertisement							</a>
+															<div class="cli-switch">
+									<input type="checkbox" id="wt-cli-checkbox-advertisement" class="cli-user-preference-checkbox"  data-id="checkbox-advertisement" />
+									<label for="wt-cli-checkbox-advertisement" class="cli-slider" data-cli-enable="Ativado" data-cli-disable="Desativado"><span class="wt-cli-sr-only">Advertisement</span></label>
+								</div>
+													</div>
+						<div class="cli-tab-content">
+							<div class="cli-tab-pane cli-fade" data-id="advertisement">
+								<div class="wt-cli-cookie-description">
+									Advertisement cookies are used to provide visitors with relevant ads and marketing campaigns. These cookies track visitors across websites and collect information to provide customized ads.
+								</div>
+							</div>
+						</div>
+					</div>
+																	<div class="cli-tab-section">
+						<div class="cli-tab-header">
+							<a role="button" tabindex="0" class="cli-nav-link cli-settings-mobile" data-target="others" data-toggle="cli-toggle-tab">
+								Others							</a>
+															<div class="cli-switch">
+									<input type="checkbox" id="wt-cli-checkbox-others" class="cli-user-preference-checkbox"  data-id="checkbox-others" />
+									<label for="wt-cli-checkbox-others" class="cli-slider" data-cli-enable="Ativado" data-cli-disable="Desativado"><span class="wt-cli-sr-only">Others</span></label>
+								</div>
+													</div>
+						<div class="cli-tab-content">
+							<div class="cli-tab-pane cli-fade" data-id="others">
+								<div class="wt-cli-cookie-description">
+									Other uncategorized cookies are those that are being analyzed and have not been classified into a category as yet.
+								</div>
+							</div>
+						</div>
+					</div>
+										</div>
+	</div>
+</div>
+		  </div>
+		  <div class="cli-modal-footer">
+			<div class="wt-cli-element cli-container-fluid cli-tab-container">
+				<div class="cli-row">
+					<div class="cli-col-12 cli-align-items-stretch cli-px-0">
+						<div class="cli-tab-footer wt-cli-privacy-overview-actions">
+						
+															<a id="wt-cli-privacy-save-btn" role="button" tabindex="0" data-cli-action="accept" class="wt-cli-privacy-btn cli_setting_save_button wt-cli-privacy-accept-btn cli-btn">SALVAR E ACEITAR</a>
+													</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  </div>
+</div>
+<div class="cli-modal-backdrop cli-fade cli-settings-overlay"></div>
+<div class="cli-modal-backdrop cli-fade cli-popupbar-overlay"></div>
+<!--googleon: all--><a href="https://full.services/" style="visibility: hidden; user-select: none; pointer-events: none; display: none;">plugins premium WordPress</a>
+
+
+<!-- GTM Container placement set to footer -->
+<!-- Google Tag Manager (noscript) -->
+				<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5D5H57F" height="0" width="0" style="display:none;visibility:hidden" aria-hidden="true"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->		<div data-elementor-type="popup" data-elementor-id="2702" class="elementor elementor-2702 elementor-location-popup" data-elementor-settings="{&quot;entrance_animation&quot;:&quot;slideInUp&quot;,&quot;entrance_animation_duration&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:1.2,&quot;sizes&quot;:[]},&quot;a11y_navigation&quot;:&quot;yes&quot;,&quot;triggers&quot;:{&quot;page_load&quot;:&quot;yes&quot;,&quot;page_load_delay&quot;:0},&quot;timing&quot;:{&quot;times_times&quot;:1,&quot;times&quot;:&quot;yes&quot;}}" data-elementor-post-type="elementor_library">
+					<section class="elementor-section elementor-top-section elementor-element elementor-element-3c6fbe9c elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="3c6fbe9c" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-32f40734" data-id="32f40734" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-6dd2895f elementor-widget elementor-widget-heading" data-id="6dd2895f" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Este site usa cookies para garantir que você obtenha a melhor experiência em nosso site. </h2>				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-79a0c578" data-id="79a0c578" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-4db9d440 elementor-mobile-align-center elementor-widget elementor-widget-button" data-id="4db9d440" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+									<div class="elementor-button-wrapper">
+					<a class="elementor-button elementor-button-link elementor-size-sm" href="#elementor-action%3Aaction%3Dpopup%3Aclose%26settings%3DeyJkb19ub3Rfc2hvd19hZ2FpbiI6IiJ9">
+						<span class="elementor-button-content-wrapper">
+									<span class="elementor-button-text">Aceitar</span>
+					</span>
+					</a>
+				</div>
+								</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				</div>
+					<script type="rocketlazyloadscript">
+				const lazyloadRunObserver = () => {
+					const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
+					const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
+						entries.forEach( ( entry ) => {
+							if ( entry.isIntersecting ) {
+								let lazyloadBackground = entry.target;
+								if( lazyloadBackground ) {
+									lazyloadBackground.classList.add( 'e-lazyloaded' );
+								}
+								lazyloadBackgroundObserver.unobserve( entry.target );
+							}
+						});
+					}, { rootMargin: '200px 0px 200px 0px' } );
+					lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
+						lazyloadBackgroundObserver.observe( lazyloadBackground );
+					} );
+				};
+				const events = [
+					'DOMContentLoaded',
+					'elementor/lazyload/observe',
+				];
+				events.forEach( ( event ) => {
+					document.addEventListener( event, lazyloadRunObserver );
+				} );
+			</script>
+			<link data-minify="1" rel='stylesheet' id='cookie-law-info-table-css' href='https://camillichamone.com.br/wp-content/cache/min/1/wp-content/plugins/cookie-law-info/legacy/public/css/cookie-law-info-table.css?ver=1760443176' media='all' />
+<script type="rocketlazyloadscript" src="https://camillichamone.com.br/wp-content/plugins/duracelltomi-google-tag-manager/dist/js/gtm4wp-form-move-tracker.js?ver=1.22.1" id="gtm4wp-form-move-tracker-js"></script>
+<script type="rocketlazyloadscript" id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script id="rocket-preload-links-js-extra">
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin\/|\/logout\/|\/wp-login.php|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/camillichamone.com.br","onHoverDelay":"100","rateThrottle":"3"};
+</script>
+<script type="rocketlazyloadscript" id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="rocketlazyloadscript" src="https://camillichamone.com.br/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.32.4" id="elementor-webpack-runtime-js"></script>
+<script type="rocketlazyloadscript" src="https://camillichamone.com.br/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.32.4" id="elementor-frontend-modules-js"></script>
+<script type="rocketlazyloadscript" src="https://camillichamone.com.br/wp-includes/js/jquery/ui/core.min.js?ver=1.13.3" id="jquery-ui-core-js"></script>
+<script type="rocketlazyloadscript" id="elementor-frontend-js-before">
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Compartilhar no Facebook","shareOnTwitter":"Compartilhar no Twitter","pinIt":"Fixar","download":"Baixar","downloadImage":"Baixar imagem","fullscreen":"Tela cheia","zoom":"Zoom","share":"Compartilhar","playVideo":"Reproduzir v\u00eddeo","previous":"Anterior","next":"Pr\u00f3ximo","close":"Fechar","a11yCarouselPrevSlideMessage":"Slide anterior","a11yCarouselNextSlideMessage":"Pr\u00f3ximo slide","a11yCarouselFirstSlideMessage":"Este \u00e9 o primeiro slide","a11yCarouselLastSlideMessage":"Este \u00e9 o \u00faltimo slide","a11yCarouselPaginationBulletMessage":"Ir para o slide"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Dispositivos m\u00f3veis no modo retrato","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Dispositivos m\u00f3veis no modo paisagem","value":880,"default_value":880,"direction":"max","is_enabled":true},"tablet":{"label":"Tablet no modo retrato","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet no modo paisagem","value":1200,"default_value":1200,"direction":"max","is_enabled":true},"laptop":{"label":"Notebook","value":1366,"default_value":1366,"direction":"max","is_enabled":true},"widescreen":{"label":"Tela ampla (widescreen)","value":2400,"default_value":2400,"direction":"min","is_enabled":true}},"hasCustomBreakpoints":true},"version":"3.32.4","is_static":false,"experimentalFeatures":{"additional_custom_breakpoints":true,"container":true,"theme_builder_v2":true,"nested-elements":true,"home_screen":true,"global_classes_should_enforce_capabilities":true,"e_variables":true,"cloud-library":true,"e_opt_in_v4_page":true,"import-export-customization":true},"urls":{"assets":"https:\/\/camillichamone.com.br\/wp-content\/plugins\/elementor\/assets\/","ajaxurl":"https:\/\/camillichamone.com.br\/wp-admin\/admin-ajax.php","uploadUrl":"https:\/\/camillichamone.com.br\/wp-content\/uploads"},"nonces":{"floatingButtonsClickTracking":"614057384a"},"swiperClass":"swiper","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_mobile_extra","viewport_tablet","viewport_tablet_extra","viewport_laptop","viewport_widescreen"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":3903,"title":"Desc%C3%A3oplica%20Pocket%20-%20Camilli%20Chamone","excerpt":"","featuredImage":false}};
+</script>
+<script type="rocketlazyloadscript" src="https://camillichamone.com.br/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.32.4" id="elementor-frontend-js"></script>
+<script type="rocketlazyloadscript" src="https://camillichamone.com.br/wp-content/plugins/elementor/assets/lib/swiper/v8/swiper.min.js?ver=8.4.5" id="swiper-js"></script>
+<script type="rocketlazyloadscript" id="joinchat-lite-js-before">
+var joinchat_obj = {"settings":{"telephone":"5554993223301","whatsapp_web":false,"message_send":"Oi, equipe da Camilli! Gostaria de mais informa\u00e7\u00f5es sobre o Curso Desc\u00e3oplica. Obrigado(a)!"}};
+</script>
+<script type="rocketlazyloadscript" src="https://camillichamone.com.br/wp-content/plugins/creame-whatsapp-me/public/js/joinchat-lite.min.js?ver=6.0.8" id="joinchat-lite-js" defer data-wp-strategy="defer"></script>
+<script type="rocketlazyloadscript" src="https://camillichamone.com.br/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.30.0" id="elementor-pro-webpack-runtime-js"></script>
+<script type="rocketlazyloadscript" src="https://camillichamone.com.br/wp-includes/js/dist/hooks.min.js?ver=4d63a3d491d11ffd8ac6" id="wp-hooks-js"></script>
+<script type="rocketlazyloadscript" src="https://camillichamone.com.br/wp-includes/js/dist/i18n.min.js?ver=5e580eb46a90c2b997e6" id="wp-i18n-js"></script>
+<script type="rocketlazyloadscript" id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script type="rocketlazyloadscript" id="elementor-pro-frontend-js-before">
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/camillichamone.com.br\/wp-admin\/admin-ajax.php","nonce":"9c1a4bb279","urls":{"assets":"https:\/\/camillichamone.com.br\/wp-content\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/camillichamone.com.br\/wp-json\/"},"settings":{"lazy_load_background_images":true},"popup":{"hasPopUps":true},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"},"x-twitter":{"title":"X"},"threads":{"title":"Threads"}},"facebook_sdk":{"lang":"pt_BR","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/camillichamone.com.br\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
+</script>
+<script type="rocketlazyloadscript" src="https://camillichamone.com.br/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.30.0" id="elementor-pro-frontend-js"></script>
+<script type="rocketlazyloadscript" src="https://camillichamone.com.br/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js?ver=3.30.0" id="pro-elements-handlers-js"></script>
+<script>window.lazyLoadOptions={elements_selector:"img[data-lazy-src],.rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://camillichamone.com.br/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script>	<script>class RocketElementorAnimation{constructor(){this.deviceMode=document.createElement("span"),this.deviceMode.id="elementor-device-mode",this.deviceMode.setAttribute("class","elementor-screen-only"),document.body.appendChild(this.deviceMode)}_detectAnimations(){let t=getComputedStyle(this.deviceMode,":after").content.replace(/"/g,"");this.animationSettingKeys=this._listAnimationSettingsKeys(t),document.querySelectorAll(".elementor-invisible[data-settings]").forEach(t=>{const e=t.getBoundingClientRect();if(e.bottom>=0&&e.top<=window.innerHeight)try{this._animateElement(t)}catch(t){}})}_animateElement(t){const e=JSON.parse(t.dataset.settings),i=e._animation_delay||e.animation_delay||0,n=e[this.animationSettingKeys.find(t=>e[t])];if("none"===n)return void t.classList.remove("elementor-invisible");t.classList.remove(n),this.currentAnimation&&t.classList.remove(this.currentAnimation),this.currentAnimation=n;let s=setTimeout(()=>{t.classList.remove("elementor-invisible"),t.classList.add("animated",n),this._removeAnimationSettings(t,e)},i);window.addEventListener("rocket-startLoading",function(){clearTimeout(s)})}_listAnimationSettingsKeys(t="mobile"){const e=[""];switch(t){case"mobile":e.unshift("_mobile");case"tablet":e.unshift("_tablet");case"desktop":e.unshift("_desktop")}const i=[];return["animation","_animation"].forEach(t=>{e.forEach(e=>{i.push(t+e)})}),i}_removeAnimationSettings(t,e){this._listAnimationSettingsKeys().forEach(t=>delete e[t]),t.dataset.settings=JSON.stringify(e)}static run(){const t=new RocketElementorAnimation;requestAnimationFrame(t._detectAnimations.bind(t))}}document.addEventListener("DOMContentLoaded",RocketElementorAnimation.run);</script></body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1760883873 -->
